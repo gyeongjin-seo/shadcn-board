@@ -4,6 +4,7 @@ import LabelCalendar from "@/components/ui/common/calendar/LabelCalendar";
 // Shadcn UI
 import { Progress } from "@/components/ui/progress";
 import { Button } from "@/components/ui/button";
+import BasicBoard from "@/components/ui/common/board/BasicBoard";
 // CSS
 import styles from "./page.module.scss";
 
@@ -42,7 +43,7 @@ function page() {
         </div>
       </header>
       <main className={styles.container__body}>
-        <div className={styles.container__body__infoBox}>
+        {/* <div className={styles.container__body__infoBox}>
           <span className={styles.title}>There is no board yet</span>
           <span className={styles.subTitle}>
             Click the button and start flashing!
@@ -55,7 +56,8 @@ function page() {
               height={100}
             />
           </button>
-        </div>
+        </div> */}
+        <BasicBoard />
       </main>
     </div>
   );
