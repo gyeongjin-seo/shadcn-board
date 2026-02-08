@@ -23,6 +23,7 @@ import { toast } from "sonner";
 import styles from "./MarkdownDialog.module.scss";
 
 function MarkdownDialog() {
+  const [open, setOpen] = useState<boolean>(false);
   const [title, setTitle] = useState<string>("");
   const [content, setContent] = useState<string | undefined>(
     "**Hello, world!!**",
@@ -64,12 +65,15 @@ function MarkdownDialog() {
         toast("생성 완료!", {
           description: "작성한 글이 Supabase에 올바르게 저장되었습니다.",
         });
+
+        // 등록 후 조건 초기화
+        setOpen(false);
       }
     }
   };
 
   return (
-    <Dialog>
+    <Dialog open={open} onOpenChange={setOpen}>
       <DialogTrigger asChild>
         {/* <Button
           variant={"ghost"}
